@@ -6,15 +6,24 @@ Point of Sale for Web Programming
 ### b. Instal Laravel
 ### c. Migration
 ### d. Seeder
+### e. Upload ke github
 
-## 2. Manajemen Kategori
-## 3. Manajemen Produk
-## 4. Autentikasi Pengguna
-## 5. Peran & Izin Pengguna
-## 6. Transaksi (Keranjang)
-## 7. Transaksi 2
-## 8. Laporan
-## 9. Grafik
+## 2. Layout Template
+### a. Memilih Tema
+    AdminLTE 3.2 stable version
+### b. Download
+### c. Sesuaikan
+### d. Buat Layout
+### e. Upload ke github
+
+## 3. Manajemen Kategori
+## 4. Manajemen Produk
+## 5. Autentikasi Pengguna
+## 6. Peran & Izin Pengguna
+## 7. Transaksi (Keranjang)
+## 8. Transaksi 2
+## 9. Laporan
+## 10. Grafik
 
 
 ### Cara Menggunakan Aplikasi
@@ -43,6 +52,7 @@ DB_PORT=3306
 DB_DATABASE=webpropos
 DB_USERNAME=root
 DB_PASSWORD=
+APP_TIMEZONE="Asia/Jakarta"
 ```
 6. Jalankan aplikasi dengan perintah.
 ```
