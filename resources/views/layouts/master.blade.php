@@ -8,6 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title') | WebPro POS</title>
+  <link rel="shortcut icon" href="{{ url('/assets') }}/dist/img/logo.png" type="image/x-icon">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -27,10 +28,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="." class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="{{ url('categories') }}" class="nav-link">Kategori</a>
       </li>
     </ul>
 
@@ -189,81 +190,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
       </div>
 
-      <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="." class="nav-link active">
+          <li class="nav-item">
+            <a href="." class="nav-link {{ Request::is('/') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Beranda
-                <i class="right fas fa-angle-left"></i>
-              </p>
+              <p>Beranda</p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ url('categories') }}" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Kategori</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Produk</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Pelanggan
-                <span class="right badge badge-danger">New</span>
-              </p>
+            <a href="{{ url('categories') }}" class="nav-link {{ Request::is('categories') ? 'active' : '' }}">
+              <i class="nav-icon fa fa-list"></i>
+              <p>Kategori</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ url('products') }}" class="nav-link {{ Request::is('products') ? 'active' : '' }}">
+              <i class="nav-icon fa fa-th"></i>
+              <p>Produk</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('users') }}" class="nav-link {{ Request::is('users') ? 'active' : '' }}">
+              <i class="nav-icon fa fa-users"></i>
+              <p>Pengguna</p>
+            </a>
+          </li>
+
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
   </aside>
 
   @yield('content')
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-
-  <!-- Main Footer -->
   <footer class="main-footer">
-    <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
       Version 0.0.1
     </div>
-    <!-- Default to the left -->
     <strong>Copyright &copy; 2025-<?=date('Y')?> <a href="https://muhidin.web.id">Muhidin</a>.</strong> All rights reserved.
   </footer>
 </div>
-<!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
-
-<!-- jQuery -->
 <script src="{{ url('/assets') }}/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
 <script src="{{ url('/assets') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
 <script src="{{ url('/assets') }}/dist/js/adminlte.min.js"></script>
 </body>
 </html>

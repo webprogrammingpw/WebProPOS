@@ -12,47 +12,58 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::orderBy('name')->paginate(10);
+        return view('categories.index', compact('categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+           'name' => 'required|string|max:255',
+           'description' => 'nullable|string',
+        ], [
+            'name.required' => 'Nama kategori wajid diisi.',
+            'name.string' => 'Nama kategori berupa string.',
+            'name.max' => 'Maksimal panjang nama kategori adalah 255 karakter.',
+            'description.string' => 'Deskripsi kategori berupa string.',
+        ]);
+        try {
+            Category::create([
+                'name' => $request->name,
+                'description' => $request->description,
+            ]);
+            return redirect()->back()->with('success', 'Kategori: <b>' . $request->name . '</b> berhasil disimpan.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Category $category)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Category $category)
     {
-        //
+        return view('categories.edit', compact('category'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Category $category)
     {
-        //
+        $url = $request->url;
+        $request->validate([
+           'name' => 'required|string|max:255',
+           'description' => 'nullable|string',
+        ], [
+            'name.required' => 'Nama kategori wajid diisi.',
+            'name.string' => 'Nama kategori berupa string.',
+            'name.max' => 'Maksimal panjang nama kategori adalah 255 karakter.',
+            'description.string' => 'Deskripsi kategori berupa string.',
+        ]);
+        try {
+            $category->update([
+                'name' => $request->name,
+                'description' => $request->description,
+            ]);
+            return redirect($url)->with('success', 'Kategori: <b>' . $request->name . '</b> berhasil diubah.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
     }
 
     /**
@@ -60,6 +71,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->back()->with('success', 'Kategori: <b>' . $category->name . '</b> berhasil dihapus.');
     }
 }

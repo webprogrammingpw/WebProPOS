@@ -2,21 +2,26 @@
 Point of Sale for Web Programming
 
 ## 1. Skema Database
-### a. Gambaran Aplikasi
-### b. Instal Laravel
-### c. Migration
-### d. Seeder
-### e. Upload ke github
+a. Gambaran Aplikasi
+b. Instal Laravel
+c. Migration
+d. Seeder
+e. Upload ke github
 
 ## 2. Layout Template
-### a. Memilih Tema
-    AdminLTE 3.2 stable version
-### b. Download
-### c. Sesuaikan
-### d. Buat Layout
-### e. Upload ke github
+a. Memilih Tema - AdminLTE 3.2 stable version
+b. Download
+c. Sesuaikan
+d. Buat Layout
+e. Upload ke github
 
 ## 3. Manajemen Kategori
+a. Data dan Tambah Kategori
+b. Simpan Kategori
+c. Hapus Kategori
+d. Edit dan Update Kategori
+e. Upload ke Github
+
 ## 4. Manajemen Produk
 ## 5. Autentikasi Pengguna
 ## 6. Peran & Izin Pengguna
