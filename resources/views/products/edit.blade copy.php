@@ -52,7 +52,6 @@
                                     </div>
                                     <input type="hidden" name="url" value="{{ URL::previous() }}">
                                     <button type="submit" class="btn btn-primary">Update</button>
-                                    <button type="reset" class="btn btn-default float-right">Reset</button>
                                 </form>
                             </div>
                         </div>

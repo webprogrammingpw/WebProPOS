@@ -28,7 +28,7 @@
                     <div class="col-lg-5">
                         <div class="card card-primary card-outline">
                             <div class="card-header">
-                                <h5 class="m-0 font-weight-bold">Data Kategori</h5>
+                                <h5 class="m-0 font-weight-bold">Tambah Kategori</h5>
                             </div>
                             <div class="card-body">
                                 @if (session('error'))
@@ -58,6 +58,7 @@
                                         @endif
                                     </div>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
+                                    <button type="reset" class="btn btn-default float-right">Reset</button>
                                 </form>
                             </div>
                         </div>
@@ -66,7 +67,7 @@
                     <div class="col-lg-7">
                         <div class="card card-primary card-outline">
                             <div class="card-header">
-                                <h5 class="m-0 font-weight-bold">Tambah Kategori</h5>
+                                <h5 class="m-0 font-weight-bold">Data Kategori</h5>
                             </div>
                             <div class="card-text">
                                 @if (session('success'))

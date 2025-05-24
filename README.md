@@ -20,9 +20,16 @@ a. Data dan Tambah Kategori
 b. Simpan Kategori
 c. Hapus Kategori
 d. Edit dan Update Kategori
-e. Upload ke Github
+e. Memasang Menu Aktif
+f. Upload ke Github
 
 ## 4. Manajemen Produk
+a. Create Product
+b. Read Product
+c. Update Product
+d. Delete Product
+e. Upload ke Github
+
 ## 5. Autentikasi Pengguna
 ## 6. Peran & Izin Pengguna
 ## 7. Transaksi (Keranjang)
